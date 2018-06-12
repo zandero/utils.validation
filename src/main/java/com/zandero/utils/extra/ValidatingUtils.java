@@ -1,9 +1,11 @@
 package com.zandero.utils.extra;
 
 import com.zandero.utils.StringUtils;
+import org.apache.commons.validator.routines.DomainValidator;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.apache.commons.validator.routines.UrlValidator;
 
+import java.net.URI;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
@@ -52,6 +54,16 @@ public final class ValidatingUtils {
 
 		return !StringUtils.isNullOrEmptyTrimmed(value) &&
 		       IP_V4_PATTERN.matcher(value.trim()).matches();
+	}
+
+	public static boolean isDomain(String value) {
+
+		if (isUrl(value)) {
+			return true;
+		}
+
+		return !StringUtils.isNullOrEmptyTrimmed(value) &&
+			   DomainValidator.getInstance().isValid(value);
 	}
 
 	/**

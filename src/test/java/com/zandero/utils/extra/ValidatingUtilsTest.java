@@ -65,6 +65,19 @@ public class ValidatingUtilsTest {
 	}
 
 	@Test
+	public void isDomainTest() {
+
+		assertTrue(ValidatingUtils.isDomain("http://www.some.com"));
+		assertTrue(ValidatingUtils.isDomain("https://www.some.com"));
+		assertTrue(ValidatingUtils.isDomain("www.some.com"));
+		assertTrue(ValidatingUtils.isDomain("some.com"));
+
+		assertFalse(ValidatingUtils.isDomain("https://"));
+		assertFalse(ValidatingUtils.isDomain("bla"));
+		assertFalse(ValidatingUtils.isDomain("ssh://www.some.com"));
+	}
+
+	@Test
 	public void isIPv4Test() {
 
 		assertTrue(ValidatingUtils.isIPv4("127.0.0.1"));
