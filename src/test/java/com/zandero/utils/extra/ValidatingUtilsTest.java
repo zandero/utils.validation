@@ -71,6 +71,8 @@ public class ValidatingUtilsTest {
 		assertTrue(ValidatingUtils.isDomain("https://www.some.com"));
 		assertTrue(ValidatingUtils.isDomain("www.some.com"));
 		assertTrue(ValidatingUtils.isDomain("some.com"));
+		assertTrue(ValidatingUtils.isDomain("  some.com  "));
+		assertTrue(ValidatingUtils.isDomain("  SOME.com  "));
 
 		assertFalse(ValidatingUtils.isDomain("https://"));
 		assertFalse(ValidatingUtils.isDomain("bla"));

@@ -6,7 +6,7 @@ Collection of validation utilities
  <dependency>      
       <groupId>com.zandero</groupId>      
       <artifactId>utils.validation</artifactId>      
-      <version>1.0</version>      
+      <version>1.0.1</version>      
  </dependency>
  ```
  
@@ -22,6 +22,10 @@ ValidatingUtils.isRegEx(regular_expression);
 
 ```java
 ValidatingUtils.isUrl(path);
+```
+
+```java
+ValidatingUtils.isDomain(path);
 ```
 
 ```java

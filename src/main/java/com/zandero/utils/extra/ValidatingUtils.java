@@ -58,6 +58,12 @@ public final class ValidatingUtils {
 
 	public static boolean isDomain(String value) {
 
+		value = StringUtils.trimToNull(value);
+		if (value == null) {
+			return false;
+		}
+
+		value = value.toLowerCase();
 		if (isUrl(value)) {
 			return true;
 		}
